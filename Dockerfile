@@ -9,6 +9,7 @@ RUN cd encointer-node && cargo fetch
 RUN apt-get update
 RUN apt-get install protobuf-compiler libclang-dev -y
 RUN cd encointer-node && cargo build --release
+RUN cd encointer-pallets && cargo test --package pallet-encointer-democracy --lib
 
 RUN apt-get install python3 python3-pip python3.11-venv -y
 RUN python3 -m venv env
